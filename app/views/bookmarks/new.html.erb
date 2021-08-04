@@ -1,7 +1,15 @@
-<h1>Add to <%= @list.name %></h1>
+<div class="home-banner list-banner">
+<h1>Add a movie to <%= @list.name %></h1>
+</div>
 
-<%= simple_form_for [ @list, @bookmark ] do |f| %>
-<%= f.input :comment %>
-<%= f.association :movie %>
-<%= f.submit "Create a new bookmark" %>
-<% end %>
+<div class="container mt-3 mb-5">
+  <div class="row justify-content-center">
+    <div class="col-6">
+    <%= simple_form_for [ @list, @bookmark ] do |f| %>
+    <%= f.input :comment %>
+    <%= f.association :movie %>
+    <%= f.submit 'Add a movie to list', class: 'btn btn-success' %>
+    <% end %>
+    </div>
+  </div>
+</div>
