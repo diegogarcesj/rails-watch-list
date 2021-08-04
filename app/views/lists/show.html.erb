@@ -17,8 +17,9 @@
         <h5><strong><%= movie.title %></strong> <span class="small text-secondary"> &sdot; <%= movie.rating %> <%= icon('fas', 'star', class: 'text-warning') %> </span></h5>
         <p><%= movie.overview %></p>
         <div class="footer d-flex justify-content-between align-items-center">
-          <strong><%= icon('fas', 'quote-left') %> <%= movie.bookmarks.find_by(movie_id: movie.id, list_id: @list.id).comment %></strong>
-          <%= link_to 'delete', lists_path %>
+          <% bookmark = movie.bookmarks.find_by(movie_id: movie.id, list_id: @list.id) %>
+          <strong><%= icon('fas', 'quote-left') %> <%= bookmark.comment %></strong>
+          <%= link_to 'delete', bookmark_path(bookmark), class: 'text-danger', method: :delete, data: {confirm: 'Are you sure?'} %>
         </div>
       </div>
     </div>
