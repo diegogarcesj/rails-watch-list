@@ -1,7 +1,27 @@
+<div class="home-banner list-banner">
 <h1><%= @list.name %></h1>
-<% @list.movies.each do |movie| %>
-<%= movie.title %> <br />
-<%= movie.overview %> <br />
-<%= movie.poster_url %> <br />
-<%= movie.rating %> <br />
-<% end %>
+</div>
+
+
+<div class="container mt-3">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h4>My Lists</h4>
+    <%= link_to 'Add a movie', new_list_path, class: 'btn btn-success' %>
+  </div>
+
+
+<div class="cards">
+  <% @list.movies.each do |movie| %>
+    <div class="card">
+      <%= image_tag(movie.poster_url) %>
+      <div>
+        <h4> <%= movie.title %> </h4><span><%= movie.rating %></span>
+        <p><%= movie.overview %></p>
+        <%= 'movie.comment' %> delete
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+</div>

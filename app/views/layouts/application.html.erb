@@ -12,6 +12,15 @@
   </head>
 
   <body>
+
+  <div class="navbar navbar-light navbar-lewagon d-flex justify-content-between align-items-center">
+  <%= link_to icon('fas', 'film'), lists_path, class: 'navbar-brand' %>
+    <div>
+      <%= link_to 'My lists', lists_path, class: 'text-secondary' %>
+      <%= link_to 'New list', new_list_path, class: 'text-secondary' %>
+    </div>
+  </div>
+
     <%= yield %>
   </body>
 </html>
