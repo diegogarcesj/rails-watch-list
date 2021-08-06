@@ -34,7 +34,15 @@ document.addEventListener("turbolinks:load", function () {
 
 
 import { barRating } from '../components/bar_rating';
+
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   barRating();
+});
+
+
+import { dateMinutes } from '../components/date';
+document.addEventListener('turbolinks:load', () => {
+  // Call your JS functions here
+  dateMinutes();
 });
