@@ -25,4 +25,33 @@
   <% end %>
 </div>
 
+<hr class="my-5">
+<!-- Reviews -->
+<div class="cards cards-list">
+
+<div>
+<h4>Reviews</h4>
+<% @list.reviews.each do |review| %>
+  <%= (icon('fas', 'star', class: 'text-warning') + " ") * review.rating %> <br />
+  <p><strong> <%= review.comment %> </strong></p>
+  <hr>
+<% end %>
+</div>
+
+<div class="card">
+  <div class="card-body">
+    <h5>Add your review</h5>
+    <%= simple_form_for [@list, @review] do |f| %>
+      <%= f.input :comment %>
+      <%= f.input :rating, collection: 0..5, prompt: "Select one" %>
+      <%= f.submit "Create Review", class: 'btn btn-success' %>
+    <% end %>
+  </div>
+</div>
+
+
+</div>
+
+
+
 </div>
