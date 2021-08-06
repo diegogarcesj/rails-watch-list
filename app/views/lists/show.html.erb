@@ -32,7 +32,7 @@
 <div>
 <h4>Reviews</h4>
 <% @list.reviews.each do |review| %>
-  <%= (icon('fas', 'star', class: 'text-warning') + " ") * review.rating %> <br />
+  <%= (icon('fas', 'star', class: 'text-warning') + " ") * review.rating %> <em class="date"><%= review.created_at %></em><br />
   <p><strong> <%= review.comment %> </strong></p>
   <hr>
 <% end %>
@@ -52,3 +52,13 @@
 </div>
 
 </div>
+
+<script>
+const dates = document.querySelectorAll(".date");
+dates.forEach(date => {
+  const str = date.innerText;
+  const elapsed = new Date() - Date.parse(str.replace(/-/g, ' '));
+  const minutes = Math.round(elapsed / 60000);
+  date.innerText = `${minutes} minutes ago`;
+});
+</script>
