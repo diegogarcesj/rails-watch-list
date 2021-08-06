@@ -33,4 +33,8 @@ document.addEventListener("turbolinks:load", function () {
 });
 
 
-import '../components/bar_rating';
+import { barRating } from '../components/bar_rating';
+document.addEventListener('turbolinks:load', () => {
+  // Call your JS functions here
+  barRating();
+});
