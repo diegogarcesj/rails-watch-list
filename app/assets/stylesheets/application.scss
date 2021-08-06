@@ -12,6 +12,9 @@
 @import "components/index";
 @import "pages/index";
 
+// Select2 CSS
+@import 'select2/dist/css/select2';
+
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
